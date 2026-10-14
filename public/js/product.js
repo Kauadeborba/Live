@@ -22,8 +22,7 @@ function render(p) {
       <div class="gallery" id="gallery">${gallery.map((src, i) => `<button class="zoom" data-src="${escape(src)}" aria-label="Ampliar foto ${i + 1}"><img class="photo" src="${escape(src)}" alt="${i ? '' : escape(p.name)}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}></button>`).join('')}</div>
       <div class="dots" aria-hidden="true">${gallery.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>
     </div>
-    <div class="buy tag">
-      <span class="tag-stitch" aria-hidden="true"></span>
+    <div class="buy">
       <div class="crumbs"><a href="/">Início</a> / <a href="/produtos?categoria=${encodeURIComponent(p.category.slug)}">${escape(p.category.name)}</a></div>
       <h1 class="display">${escape(p.name)}</h1>
       <div class="price">${money(p.priceCents)}</div>
@@ -34,7 +33,7 @@ function render(p) {
       <div class="stock-note" id="note" aria-live="polite">Escolha um tamanho para continuar.</div>
       <div class="buy-row">
         <div class="qty" aria-label="Quantidade"><button data-q="-1" aria-label="Diminuir">${icon('minus')}</button><span id="qty">1</span><button data-q="1" aria-label="Aumentar">${icon('plus')}</button></div>
-        <button class="btn" id="add" disabled>Levar para a sacola<span class="stamp" aria-hidden="true">Na<br>sacola</span></button>
+        <button class="btn" id="add" disabled>Adicionar à sacola</button>
       </div>
       <ul class="perks">
         <li>${icon('store')}<span><strong>Retire na loja</strong> ${STORE.pickupWindow ? escape(STORE.pickupWindow) : 'sem custo de frete'}</span></li>
@@ -99,10 +98,6 @@ function render(p) {
     }
     add.disabled = true
     try {
-      const stamp = add.querySelector('.stamp')
-      stamp.classList.remove('on')
-      void stamp.offsetWidth
-      stamp.classList.add('on')
       await addToBag(selected.id, quantity)
     } catch (err) {
       window.toast(err.message, 'error')

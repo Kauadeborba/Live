@@ -18,8 +18,7 @@ try {
   document.getElementById('account').textContent = me.name.split(' ')[0]
   root.innerHTML = orders.length
     ? orders.map((o) => `
-      <article class="order tag">
-        <span class="tag-stitch" aria-hidden="true"></span>
+      <article class="order">
         <header>
           <div><h2 class="display">Pedido nº ${o.id}</h2><div class="muted" style="font-size:13px">${new Date(o.createdAt).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}</div></div>
           <div class="order-meta"><span class="status">${STATUS[o.status]}</span><span class="muted">${o.fulfillment === 'PICKUP' ? 'Retirada na loja' : 'Entrega'}</span></div>

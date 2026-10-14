@@ -8,7 +8,6 @@ export const pieceCard = (p) => `
   <article class="piece">
     <a class="piece-media" href="/produto?slug=${encodeURIComponent(p.slug)}">
       ${p.images.slice(0, 2).map((src, i) => `<img class="photo" src="${escape(src)}" alt="${i ? '' : escape(p.name)}" loading="lazy">`).join('')}
-      <span class="piece-tag tag">${p.category.slug === 'acessorios' ? 'Único' : 'PP–GG'}</span>
     </a>
     ${p.variants?.length ? `<div class="quick" role="group" aria-label="Compra rápida"><span class="label">Adicionar</span><div>${sizesOf(p)}</div></div>` : ''}
     <a href="/produto?slug=${encodeURIComponent(p.slug)}" class="piece-info">

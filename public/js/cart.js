@@ -33,8 +33,7 @@ function render(bag) {
           <div class="price">${money(item.subtotalCents)}</div>
         </article>`).join('')}
       </section>
-      <aside class="receipt tag">
-        <span class="tag-stitch" aria-hidden="true"></span>
+      <aside class="receipt">
         <h2 class="display">Resumo</h2>
         <div class="row"><span>${bag.itemCount} ${bag.itemCount === 1 ? 'peça' : 'peças'}</span><span>${money(bag.totalCents)}</span></div>
         <fieldset class="fulfillment">
