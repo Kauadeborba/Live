@@ -1,0 +1,29 @@
+{
+  "name": "live-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Loja de estudo Live: API de e-commerce esportivo com Express, Prisma e PostgreSQL",
+  "scripts": {
+    "dev": "node --watch --env-file=.env src/server.js",
+    "start": "node --env-file=.env src/server.js",
+    "db:push": "prisma db push",
+    "db:seed": "node --env-file=.env prisma/seed.js",
+    "db:reset": "prisma db push && npm run db:seed",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "prisma": "^6.19.0",
+    "supertest": "^7.1.4",
+    "vitest": "^3.2.4"
+  }
+}

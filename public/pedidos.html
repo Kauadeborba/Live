@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafaf8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Meus pedidos · Live</title>
+</head>
+<body>
+  <main class="wrap">
+    <div class="page-head" style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap">
+      <h1 class="display">Pedidos</h1>
+      <p class="muted" style="font-size:13px"><span id="account">Sua conta</span> · <button class="text-btn" id="logout">Sair da conta</button></p>
+    </div>
+    <div id="notice"></div>
+    <div class="orders" id="orders"></div>
+  </main>
+  <script type="module" src="/js/layout.js"></script>
+  <script type="module" src="/js/orders.js"></script>
+</body>
+</html>

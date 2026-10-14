@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T12:00:00-03:00",
+  "title": "Design System: Live",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Branco-Gelo", "canonical": "oklch(98.5% 0.003 106)", "tonalRamp": ["#0b0b0a", "#252524", "#424240", "#616160", "#828281", "#a5a5a3", "#c9c9c7", "#eeeeec"] },
+      "twill": { "role": "neutral", "displayName": "Sarja Greige", "canonical": "oklch(91.2% 0.011 77)", "tonalRamp": ["#0e0b06", "#28241f", "#45413c", "#65605a", "#86827b", "#a9a49e", "#cdc8c1", "#f3eee7"] },
+      "twill-deep": { "role": "neutral", "displayName": "Sarja Funda", "canonical": "oklch(86.1% 0.017 76)", "tonalRamp": ["#0f0a04", "#2a241c", "#474138", "#676056", "#888177", "#aba499", "#d0c8bd", "#f5ede2"] },
+      "ink": { "role": "neutral", "displayName": "Tinta Café", "canonical": "oklch(23.8% 0.008 59)", "tonalRamp": ["#0e0a08", "#282421", "#45413e", "#65605d", "#86817d", "#a9a4a0", "#cdc8c4", "#f3ede9"] },
+      "ink-pressed": { "role": "neutral", "displayName": "Tinta Pressionada" },
+      "ink-soft": { "role": "neutral", "displayName": "Tinta Suave", "canonical": "oklch(45.9% 0.014 59)", "tonalRamp": ["#100a06", "#2a241e", "#48403b", "#685f59", "#89807a", "#aca39c", "#d0c7c0", "#f6ece5"] },
+      "thread": { "role": "primary", "displayName": "Linha Caramelo", "canonical": "oklch(52.9% 0.039 55)", "tonalRamp": ["#170600", "#342012", "#533d2e", "#735c4c", "#957d6c", "#b99f8e", "#dec3b1", "#ffe8d6"] },
+      "line": { "role": "neutral", "displayName": "Linha de 1px" },
+      "linen-white": { "role": "neutral", "displayName": "Branco Linho" },
+      "sold-out": { "role": "neutral", "displayName": "Esgotado" },
+      "danger": { "role": "tertiary", "displayName": "Perigo", "canonical": "oklch(48.4% 0.131 30)", "tonalRamp": ["#2d0000", "#540000", "#791a0f", "#9e3e31", "#c46051", "#ec8373", "#ffa795", "#ffd0be"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Título da tag do hero e títulos de página, Bodoni Moda leve em escala de moda." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de seção, nome da peça, editorial e cadastro." },
+      "title": { "displayName": "Title", "purpose": "Cabeçalho de drawer, resumo, pedido, itens da sacola, mega-menu (24–34px)." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido e UI em Hanken Grotesk, sempre com números tabulares." },
+      "label": { "displayName": "Label", "purpose": "Versaletes espaçados: rótulos de etiqueta, legendas, status; caixa alta 0.16em." },
+      "button": { "displayName": "Button", "purpose": "Botões e links de ação em caixa alta espaçada." }
+    },
+    "shadows": [
+      { "name": "tag-hanging", "value": "0 30px 60px -40px rgba(34, 30, 27, 0.45)", "purpose": "Só a tag do hero, que pende do fio." },
+      { "name": "button-hover", "value": "0 10px 24px -14px rgba(34, 30, 27, 0.6)", "purpose": "Hover do botão primário." },
+      { "name": "mega", "value": "0 30px 40px -30px rgba(34, 30, 27, 0.35)", "purpose": "Mega-menu aberto." },
+      { "name": "drawer-side", "value": "-20px 0 50px -30px rgba(34, 30, 27, 0.5)", "purpose": "Drawers laterais (sacola, guia de medidas)." },
+      { "name": "drawer-top", "value": "0 20px 50px -30px rgba(34, 30, 27, 0.5)", "purpose": "Drawer superior de busca." },
+      { "name": "toast", "value": "0 16px 32px -18px rgba(34, 30, 27, 0.7)", "purpose": "Toast de confirmação ou erro." },
+      { "name": "eyelet", "value": "inset 0 0 0 3px var(--twill-deep), inset 0 1px 2px rgba(0,0,0,.25)", "purpose": "O furo do ilhós da tag." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Curva única (ease exponencial) para todo movimento." },
+      { "name": "swing", "value": "rotate 0 → 7deg → -4deg → 1.5deg → 0, 1.6s, transform-origin 50% 0", "purpose": "Tag da peça balança a partir do ilhós no hover." },
+      { "name": "swing-in", "value": "rotate 9deg → -4deg → 1.6deg → -0.5deg → 0, 2.4s, transform-origin 50% 25px", "purpose": "Entrada da tag do hero." },
+      { "name": "stamp", "value": "scale(1.6) rotate(-14deg) → scale(1) rotate(-10deg), hold, fade; 2.2s", "purpose": "Carimbo caramelo 'Na sacola' ao levar a peça." },
+      { "name": "drawer", "value": "transform 0.5s + scrim opacity 0.45s", "purpose": "Drawers entram por translate da borda." },
+      { "name": "mega-reveal", "value": "clip-path inset(0 0 100% 0) → inset(0), 0.55s", "purpose": "Revelação do mega-menu de cima para baixo." },
+      { "name": "settle", "value": "translateY(-10px), opacity 0 → none, 0.9s", "purpose": "Item recém-adicionado assenta na sacola." },
+      { "name": "ship-meter", "value": "clip-path 0.8s", "purpose": "Preenchimento caramelo da barra de frete." },
+      { "name": "nav-underline", "value": "background-size 0 → 100% 1px, 0.5s", "purpose": "Sublinhado da navegação cresce da esquerda." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1080px" },
+      { "name": "mobile", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal: tinta sólida, reta, caixa alta espaçada.",
+      "html": "<button class=\"ds-btn\">Levar para a sacola</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 34px; border: 1px solid var(--ink, #221e1b); background: var(--ink, #221e1b); color: var(--paper, #fafaf8); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; border-radius: 0; cursor: pointer; transition: background .3s cubic-bezier(0.16,1,0.3,1), box-shadow .3s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover { background: #3a332e; box-shadow: 0 10px 24px -14px rgba(34,30,27,0.6); } .ds-btn:focus-visible { outline: 1.5px solid var(--thread, #7e6656); outline-offset: 3px; }"
+    },
+    {
+      "name": "Botão de linha",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Ação secundária: contorno de tinta que inverte no hover.",
+      "html": "<button class=\"ds-btn-line\">Ver a coleção</button>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 34px; border: 1px solid var(--ink, #221e1b); background: transparent; color: var(--ink, #221e1b); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; border-radius: 0; cursor: pointer; transition: background .3s cubic-bezier(0.16,1,0.3,1), color .3s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line:hover { background: var(--ink, #221e1b); color: var(--paper, #fafaf8); } .ds-btn-line:focus-visible { outline: 1.5px solid var(--thread, #7e6656); outline-offset: 3px; }"
+    },
+    {
+      "name": "Tag de ateliê",
+      "kind": "custom",
+      "refersTo": "tag",
+      "description": "Moldura assinatura: sarja com cantos cortados, ilhós e pesponto tracejado; hero, compra, resumo e pedidos.",
+      "html": "<div class=\"ds-tag\"><span class=\"ds-tag-stitch\" aria-hidden=\"true\"></span><h2 class=\"ds-tag-title\">Resumo</h2><ul class=\"ds-care\"><li><span>Composição</span><span>78% poliamida reciclada, 22% elastano</span></li><li><span>Toque</span><span>Segunda pele, acabamento fosco</span></li></ul></div>",
+      "css": ".ds-tag { position: relative; width: 320px; padding: 64px 40px 36px; background: var(--twill, #e6e1da); color: var(--ink, #221e1b); clip-path: polygon(28px 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%, 0 28px); font-family: 'Hanken Grotesk', system-ui, sans-serif; font-variant-numeric: tabular-nums; } .ds-tag::before { content: ''; position: absolute; top: 18px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--paper, #fafaf8); box-shadow: inset 0 0 0 3px var(--twill-deep, #d8d0c5), inset 0 1px 2px rgba(0,0,0,.25); } .ds-tag-stitch { position: absolute; inset: 10px; border: 1px dashed rgba(126,102,86,0.45); clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%, 0 20px); pointer-events: none; } .ds-tag-title { font-family: 'Bodoni Moda', 'Didot', serif; font-weight: 400; font-size: 34px; letter-spacing: -0.02em; line-height: 1.02; margin: 0 0 24px; } .ds-care { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(34,30,27,0.14); } .ds-care li { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(34,30,27,0.14); font-size: 13px; } .ds-care li span:first-child { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft, #5e5650); padding-top: 2px; }"
+    },
+    {
+      "name": "Tag da peça (balanço)",
+      "kind": "custom",
+      "refersTo": "tag",
+      "description": "Tag pequena pendurada por fio caramelo sobre a foto; balança a partir do ilhós no hover.",
+      "html": "<div class=\"ds-piece\"><div class=\"ds-piece-media\"><span class=\"ds-piece-tag\">PP–GG</span></div></div>",
+      "css": ".ds-piece { width: 220px; padding-top: 16px; } .ds-piece-media { position: relative; aspect-ratio: 3 / 4; background: var(--twill, #e6e1da); } .ds-piece-tag { position: absolute; top: 0; right: 18px; width: 104px; padding: 34px 0 14px; text-align: center; background: var(--twill-deep, #d8d0c5); clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%, 0 14px); transform-origin: 50% 0; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft, #5e5650); } .ds-piece-tag::before { content: ''; position: absolute; top: 12px; left: 50%; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%; background: var(--paper, #fafaf8); } .ds-piece:hover .ds-piece-tag { animation: ds-swing 1.6s cubic-bezier(0.16,1,0.3,1); } @keyframes ds-swing { 0% { transform: rotate(0); } 20% { transform: rotate(7deg); } 45% { transform: rotate(-4deg); } 70% { transform: rotate(1.5deg); } 100% { transform: rotate(0); } } @media (prefers-reduced-motion: reduce) { .ds-piece:hover .ds-piece-tag { animation: none; } }"
+    },
+    {
+      "name": "Etiqueta de tamanho",
+      "kind": "chip",
+      "refersTo": "size-label",
+      "description": "Seletor de tamanho como etiqueta tecida; o escolhido ganha pesponto caramelo; esgotado fica riscado.",
+      "html": "<div class=\"ds-sizes\"><button class=\"ds-size\" aria-pressed=\"false\">PP</button><button class=\"ds-size\" aria-pressed=\"true\">M</button><button class=\"ds-size\" disabled>G</button></div>",
+      "css": ".ds-sizes { display: flex; gap: 10px; padding: 16px; background: var(--twill, #e6e1da); } .ds-size { position: relative; min-width: 60px; height: 44px; padding: 0 14px; background: var(--paper, #fafaf8); color: var(--ink, #221e1b); border: 0; border-radius: 0; cursor: pointer; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; transition: background .3s cubic-bezier(0.16,1,0.3,1); } .ds-size::after { content: ''; position: absolute; inset: 4px; border: 1px dashed rgba(34,30,27,0.22); transition: border-color .3s cubic-bezier(0.16,1,0.3,1); } .ds-size:hover { background: #fff; } .ds-size:focus-visible { outline: 1.5px solid var(--thread, #7e6656); outline-offset: 3px; } .ds-size[aria-pressed=true] { background: #fff; box-shadow: inset 0 0 0 1px var(--thread, #7e6656); color: var(--thread, #7e6656); } .ds-size[aria-pressed=true]::after { border-color: var(--thread, #7e6656); } .ds-size:disabled { background: transparent; box-shadow: inset 0 0 0 1px rgba(34,30,27,0.14); color: #b3aaa1; text-decoration: line-through; cursor: not-allowed; }"
+    },
+    {
+      "name": "Campo de linha",
+      "kind": "input",
+      "refersTo": "input-line",
+      "description": "Campo sem caixa: legenda em versalete e régua inferior que vira caramelo no foco.",
+      "html": "<label class=\"ds-input\"><span>E-mail</span><input type=\"email\" placeholder=\"voce@exemplo.com\"></label>",
+      "css": ".ds-input { display: grid; gap: 4px; width: 320px; font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-input span { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft, #5e5650); } .ds-input input { height: 48px; border: 0; border-bottom: 1px solid var(--ink, #221e1b); background: none; outline: none; font: inherit; font-size: 16px; color: var(--ink, #221e1b); caret-color: var(--thread, #7e6656); transition: border-color .3s; } .ds-input input:focus { border-color: var(--thread, #7e6656); }"
+    },
+    {
+      "name": "Navegação",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Links de 13px com sublinhado de tinta que cresce da esquerda; wordmark Bodoni central.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Coleção</a><a href=\"#\" aria-current=\"page\">Novidades</a><a href=\"#\">Conjuntos</a><span class=\"ds-wordmark\">live</span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 26px; height: 72px; padding: 0 24px; background: var(--paper, #fafaf8); border-bottom: 1px solid rgba(34,30,27,0.14); font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-nav a { font-size: 13px; letter-spacing: 0.04em; padding: 4px 0; color: var(--ink, #221e1b); text-decoration: none; background: linear-gradient(var(--ink, #221e1b), var(--ink, #221e1b)) no-repeat left bottom / 0 1px; transition: background-size .5s cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover, .ds-nav a[aria-current] { background-size: 100% 1px; } .ds-nav a:focus-visible { outline: 1.5px solid var(--thread, #7e6656); outline-offset: 3px; } .ds-wordmark { margin-left: auto; font-family: 'Bodoni Moda', 'Didot', serif; font-size: 34px; letter-spacing: 0.02em; line-height: 1; color: var(--ink, #221e1b); }"
+    },
+    {
+      "name": "Barra de frete",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Trilho de sarja de 2px com preenchimento caramelo; só existe quando freeShippingCents está preenchido.",
+      "html": "<p class=\"ds-meter\"><span>Faltam R$ 80,00 para o frete cortesia</span><i style=\"--p:64%\"></i></p>",
+      "css": ".ds-meter { display: grid; gap: 8px; width: 320px; margin: 0; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 12.5px; color: var(--ink-soft, #5e5650); font-variant-numeric: tabular-nums; } .ds-meter i { display: block; height: 2px; background: var(--twill, #e6e1da); position: relative; } .ds-meter i::after { content: ''; position: absolute; inset: 0; background: var(--thread, #7e6656); clip-path: inset(0 calc(100% - var(--p)) 0 0); transition: clip-path .8s cubic-bezier(0.16,1,0.3,1); }"
+    },
+    {
+      "name": "Status do pedido",
+      "kind": "chip",
+      "refersTo": "status",
+      "description": "Selo retangular de contorno em tinta com versalete; único chip contornado em tinta.",
+      "html": "<span class=\"ds-status\">Aguardando pagamento</span>",
+      "css": ".ds-status { display: inline-block; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink, #221e1b); border: 1px solid var(--ink, #221e1b); padding: 5px 10px; border-radius: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Etiqueta de Ateliê",
+    "overview": "Cada peça da Live é apresentada como se estivesse num provador de ateliê: uma tag de sarja com cantos cortados, ilhós e pesponto tracejado, pendurada por um fio caramelo. Composição, toque e uso são escritos em linhas de etiqueta; o tamanho é escolhido numa etiqueta tecida; levar à sacola carimba a tag. O mundo é feito de papel, sarja, tinta e linha, e nada além disso.\n\nA densidade é baixa e editorial. Fotos grandes sangram até a borda ou ocupam colunas inteiras; a interface fica em tinta café sobre branco-gelo, com regras finas de 1px no lugar de caixas. O display é Bodoni Moda leve em escala grande; a UI é Hanken Grotesk pequena, com rótulos em caixa alta espaçada e números tabulares. Profundidade vem de camadas tonais (papel sobre sarja) e de sombras longas e difusas apenas em objetos que flutuam.\n\nO sistema rejeita a vitrine de e-commerce genérica: grade de cards com sombra, selos, banners promocionais, pegada de corrida ou performance esportiva.",
+    "keyCharacteristics": [
+      "A tag com ilhós e pesponto é a única moldura de destaque do sistema; o resto é aberto, separado por linhas de 1px.",
+      "Cantos retos em tudo; o único arredondamento é o que é circular no objeto real (ilhós, carimbo, contador).",
+      "Caramelo é linha física (fio, pesponto) e marca de estado escolhido; nunca decoração.",
+      "Movimento de tecido: balanço amortecido a partir do ilhós e ease exponencial longo em tudo.",
+      "Promessas comerciais só existem na tela quando a loja as preenche."
+    ],
+    "rules": [
+      { "name": "The Linha Caramelo Rule", "body": "O caramelo só aparece em seleção, foco, entrega escolhida e barra de frete, além de ser a própria linha da tag (fio e pesponto) e o carimbo que confirma a escolha. Se não é linha nem estado escolhido, não é caramelo.", "section": "colors" },
+      { "name": "The Sem Branco Rule", "body": "O fundo é sempre branco-gelo; branco puro só existe dentro da etiqueta de tamanho ativa.", "section": "colors" },
+      { "name": "The Números Tabulares Rule", "body": "O corpo inteiro roda com font-variant-numeric: tabular-nums; preços, quantidades e totais alinham em coluna.", "section": "typography" },
+      { "name": "The Wordmark Rule", "body": "Enquanto não há logo, o wordmark é \"live\" em minúsculas em Bodoni Moda 400 (34px no cabeçalho, 28px na tag e no mobile, gigante e cortado no rodapé). Nunca outra fonte.", "section": "typography" },
+      { "name": "The Linha Não Caixa Rule", "body": "Listas, índices, linhas de etiqueta e campos são separados por réguas de 1px (tinta no topo, line entre itens); não se envolvem em caixas.", "section": "layout" },
+      { "name": "The Flutua ou É Plano Rule", "body": "Só ganha sombra o que está fisicamente acima da página (tag pendurada, drawer, menu, toast) ou o botão sob o cursor. Nada em repouso na grade tem sombra.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar a tag (cantos cortados, ilhós, pesponto) como a moldura de qualquer bloco de decisão: compra, resumo, pedido.",
+      "Do reservar o caramelo para seleção, foco, entrega escolhida e barra de frete, além do próprio fio e pesponto da tag.",
+      "Do separar listas e campos com réguas de 1px, tinta no topo e line entre itens.",
+      "Do escrever títulos em Bodoni Moda 400 com -0.02em e rótulos em Hanken 600 11px com 0.16em em caixa alta.",
+      "Do renderizar parcelamento, frete cortesia, prazo de retirada e trocas somente quando preenchidos em public/js/store.js; com o campo vazio, a linha inteira some.",
+      "Do tratar as fotos de public/img como provisórias: trocar o arquivo mantendo o mesmo nome (ver public/img/LEIA-ME.md), em 3:4 vertical para peças.",
+      "Do usar o ease exponencial em todo movimento e respeitar prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't colocar kicker, eyebrow ou sobretítulo acima de um título; o título abre o bloco (migalha de navegação no painel de compra não é kicker).",
+      "Don't usar caramelo como cor de hover, decoração ou preenchimento de destaque.",
+      "Don't arredondar cantos de botões, campos, fotos ou tags.",
+      "Don't pôr sombra em cards de produto ou em qualquer coisa em repouso na grade.",
+      "Don't usar selos, faixas de desconto ou banners promocionais.",
+      "Don't inventar promessas comerciais, dados da loja, depoimentos ou números da marca.",
+      "Don't usar fundo branco puro; a página é branco-gelo."
+    ]
+  }
+}

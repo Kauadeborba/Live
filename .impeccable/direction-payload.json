@@ -1,0 +1,83 @@
+{
+  "title": "Escolha o mundo visual da Live",
+  "question": "A rolagem escolheu \"Etiqueta tecida\". Fique com ela, escolha uma alternativa ou role de novo.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Etiqueta tecida",
+      "kicker": "THE ROLL",
+      "lineage": "etiquetas tecidas, tags de provador e fichas de ateliê",
+      "thesis": "Cada peça se apresenta como uma etiqueta de ateliê: tecida, costurada, com composição e tamanho.",
+      "palette": ["#FAFAF8", "#E6E1DA", "#221E1B", "#7E6656"],
+      "materials": ["sarja de algodão tecida", "papel de tag com ilhós", "linha de costura caramelo"],
+      "viewport": "Foto em tela cheia à esquerda; à direita, uma tag de provador gigante com o nome da coleção e a ação principal.",
+      "risk": "Pode ficar parecido demais com qualquer loja minimalista se a etiqueta virar só enfeite.",
+      "raised": [
+        {"from": "challenger-specimen", "raise": "A hierarquia vem só do contraste de escala, sobre uma grade de linha de base rígida."},
+        {"from": "challenger-glaze", "raise": "O tom caramelo aparece num único lugar: o tamanho escolhido e a sacola."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Reformer do studio",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "aparelho reformer de pilates boutique",
+      "thesis": "A loja como um reformer: o carrinho desliza, as molas coloridas marcam escolha e intensidade.",
+      "palette": ["#F4F1EC", "#D8BF9C", "#BFC3C6", "#1E1D1B", "#B4473A"],
+      "materials": ["madeira de maple", "estofado de couro areia", "trilho cromado", "molas coloridas"],
+      "viewport": "Faixa horizontal que desliza como o carrinho do reformer, com os looks em sequência e os tamanhos como molas.",
+      "risk": "É o caminho mais óbvio para \"pilates\" e pode soar temático demais."
+    },
+    {
+      "id": "challenger-specimen",
+      "label": "Espécime tipográfico",
+      "verdict": "declined",
+      "lineage": "espécimes interativos de fonte variável",
+      "thesis": "A marca contada por uma letra gigante que muda de peso.",
+      "palette": ["#FBFBFA", "#111111", "#7E6656"],
+      "materials": ["papel liso", "tinta preta"],
+      "viewport": "Wordmark gigante ocupando a tela, com um controle de peso.",
+      "case": "Funde mal: a cliente compra look, não tipografia.",
+      "risk": "Vira peça de designer, não loja.",
+      "kept": "Hierarquia só por escala, com grade de linha de base."
+    },
+    {
+      "id": "challenger-glaze",
+      "label": "Prateleira de esmalte",
+      "verdict": "declined",
+      "lineage": "prateleira de forno cerâmico",
+      "thesis": "Peças como xícaras esmaltadas numa prateleira.",
+      "palette": ["#F3F2EF", "#2B4EA2", "#0F2A6B"],
+      "materials": ["placa de forno", "esmalte vítreo"],
+      "viewport": "Fileira de peças com o esmalte escorrendo.",
+      "case": "Funde mal: o mundo da cerâmica não é o da cliente de pilates.",
+      "risk": "Destoa do público.",
+      "kept": "Um único acento, que só aparece onde importa."
+    },
+    {
+      "id": "challenger-transit",
+      "label": "Mapa de metrô",
+      "verdict": "declined",
+      "lineage": "diagramas de transporte",
+      "thesis": "Coleções como linhas de metrô.",
+      "palette": ["#14213D", "#E63946", "#F4A261"],
+      "materials": ["esmalte azul", "porcelana"],
+      "viewport": "Mapa de linhas coloridas.",
+      "case": "Funde mal: nem a cliente nem a compra se reconhecem num mapa.",
+      "risk": "Ruído.",
+      "kept": "Rótulos de tamanho fixo e disciplinados."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": false},
+  "canon": true,
+  "canonCard": {
+    "label": "O padrão da categoria",
+    "thesis": "Moda premium minimalista: fundo branco, foto grande e wordmark preto.",
+    "palette": ["#FFFFFF", "#000000", "#8C8C8C"],
+    "materials": ["grade limpa", "fotografia de produto"],
+    "viewport": "Foto em tela cheia com o wordmark por cima e o menu discreto.",
+    "risk": "Fica igual a todas as lojas de moda premium."
+  },
+  "steer": true
+}

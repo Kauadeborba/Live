@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafaf8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Live · Activewear de ateliê</title>
+  <meta name="description" content="Roupas de treino com acabamento de ateliê para pilates, yoga e barre.">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-photo"><img class="photo" src="/img/studio-arcos.jpg" alt="Mulher em posição de pilates num reformer, em studio claro com arcos" fetchpriority="high"></div>
+      <div class="hero-side">
+        <span class="hero-string" aria-hidden="true"></span>
+        <div class="hero-tag tag">
+          <span class="tag-stitch" aria-hidden="true"></span>
+          <span class="wordmark" aria-hidden="true">live</span>
+          <h1 class="display">O studio é só o começo.</h1>
+          <ul class="care">
+            <li><span>Tecido</span><span>Poliamida reciclada com elastano</span></li>
+            <li><span>Toque</span><span>Segunda pele, acabamento fosco</span></li>
+            <li><span>Uso</span><span>Do reformer ao almoço</span></li>
+          </ul>
+          <a class="btn btn-block" href="/produtos">Ver a coleção</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section"><div class="wrap index">
+      <div>
+        <div class="section-head"><h2 class="display">Por peça</h2></div>
+        <ol id="categories"></ol>
+      </div>
+      <div class="index-frame" id="category-frame" aria-hidden="true"></div>
+    </div></section>
+
+    <section class="section" style="padding-top:0"><div class="wrap">
+      <div class="section-head"><h2 class="display">Peças-assinatura</h2><a class="link" href="/produtos?destaque=true">Ver todas <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-5-5 5 5-5 5"/></svg></a></div>
+      <div class="edit-grid" id="featured"></div>
+    </div></section>
+
+    <section class="editorial">
+      <img class="photo" src="/img/studio-reformer.jpg" alt="Aluna de pilates alongando no reformer, em conjunto claro">
+      <div>
+        <h2 class="display">Feito para o reformer. Pensado para o resto do dia.</h2>
+        <p>Modelagens que acompanham a respiração, cós que não dobra e cores que combinam entre si. Você sai da aula e segue o dia sem trocar de roupa.</p>
+        <a class="link" href="/produtos?categoria=conjuntos">Conhecer os conjuntos <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-5-5 5 5-5 5"/></svg></a>
+      </div>
+    </section>
+
+    <section class="section"><div class="wrap">
+      <div class="section-head"><h2 class="display">Acabou de chegar</h2><a class="link" href="/produtos?ordem=recentes">Ver novidades <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-5-5 5 5-5 5"/></svg></a></div>
+      <div class="rail" id="latest"></div>
+    </div></section>
+  </main>
+  <script type="module" src="/js/layout.js"></script>
+  <script type="module" src="/js/home.js"></script>
+</body>
+</html>

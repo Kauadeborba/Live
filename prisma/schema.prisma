@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  MASCULINO
+  FEMININO
+  UNISSEX
+}
+
+enum Fulfillment {
+  DELIVERY
+  PICKUP
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  CANCELED
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  slug     String    @unique
+  name     String
+  image    String
+  products Product[]
+}
+
+model Product {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  name        String
+  description String
+  priceCents  Int
+  gender      Gender
+  images      String[]
+  featured    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  categoryId  Int
+  category    Category  @relation(fields: [categoryId], references: [id])
+  variants    Variant[]
+}
+
+model Variant {
+  id         Int         @id @default(autoincrement())
+  size       String
+  stock      Int
+  productId  Int
+  product    Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+
+  @@unique([productId, size])
+}
+
+model User {
+  id           Int        @id @default(autoincrement())
+  name         String
+  email        String     @unique
+  passwordHash String
+  createdAt    DateTime   @default(now())
+  cartItems    CartItem[]
+  orders       Order[]
+}
+
+model CartItem {
+  id        Int     @id @default(autoincrement())
+  quantity  Int
+  userId    Int
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  variantId Int
+  variant   Variant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, variantId])
+}
+
+model Order {
+  id         Int         @id @default(autoincrement())
+  status      OrderStatus @default(PENDING)
+  fulfillment Fulfillment @default(DELIVERY)
+  totalCents Int
+  createdAt  DateTime    @default(now())
+  userId     Int
+  user       User        @relation(fields: [userId], references: [id])
+  items      OrderItem[]
+}
+
+model OrderItem {
+  id             Int     @id @default(autoincrement())
+  productName    String
+  size           String
+  unitPriceCents Int
+  quantity       Int
+  orderId        Int
+  order          Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  variantId      Int
+  variant        Variant @relation(fields: [variantId], references: [id])
+}

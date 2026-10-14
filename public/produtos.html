@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafaf8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Coleção · Live</title>
+</head>
+<body>
+  <main class="wrap">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Início</a> / Coleção</div>
+      <h1 class="display" id="title">A coleção</h1>
+    </div>
+    <div class="filterbar">
+      <div class="chips" id="chips" role="group" aria-label="Categorias"></div>
+      <div class="filter-tools">
+        <span class="count" id="count"></span>
+        <div class="density" role="group" aria-label="Visualização"><button data-cols="2" aria-label="Duas por linha"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="16"/><rect x="13" y="4" width="7" height="16"/></svg></button><button data-cols="4" aria-label="Quatro por linha"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></button></div>
+        <button id="toggle-drawer" aria-expanded="false">Filtrar <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></button>
+        <select class="select" id="ordem" aria-label="Ordenar">
+          <option value="recentes">Novidades</option>
+          <option value="menor-preco">Menor preço</option>
+          <option value="maior-preco">Maior preço</option>
+          <option value="nome">A a Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="drawer" id="drawer" hidden>
+      <label class="field"><span class="label muted">Preço mínimo</span><input type="number" id="precoMin" min="0" placeholder="R$ 0"></label>
+      <label class="field"><span class="label muted">Preço máximo</span><input type="number" id="precoMax" min="0" placeholder="R$ 400"></label>
+      <label style="display:flex;gap:10px;align-items:center;font-size:14px;cursor:pointer"><input type="checkbox" id="destaque" style="accent-color:var(--thread)"> Só peças-assinatura</label>
+      <button class="text-btn" id="clear">Limpar filtros</button>
+    </div>
+    <div class="grid" id="products"></div>
+    <div class="pages" id="pagination"></div>
+    <div style="height:clamp(72px,8vw,120px)"></div>
+  </main>
+  <script type="module" src="/js/layout.js"></script>
+  <script type="module" src="/js/catalog.js"></script>
+</body>
+</html>

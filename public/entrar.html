@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafaf8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Entrar · Live</title>
+</head>
+<body>
+  <main class="auth">
+    <div class="auth-photo"><img class="photo" src="/img/body-noir.jpg" alt="Mulher de body preto alongando sobre um banco de pilates"></div>
+    <div class="auth-panel">
+      <form id="form" novalidate>
+        <h1 class="display" id="heading">Que bom te ver.</h1>
+        <div class="tabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-mode="login">Entrar</button><button type="button" role="tab" aria-selected="false" data-mode="register">Criar conta</button></div>
+        <label class="input-line" id="name-field" hidden><span class="label muted">Nome</span><input name="name" autocomplete="name"></label>
+        <label class="input-line"><span class="label muted">E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="input-line"><span class="label muted">Senha</span><input name="password" type="password" autocomplete="current-password" required></label>
+        <p class="alert" id="error" hidden></p>
+        <button class="btn btn-block" id="submit">Entrar</button>
+        <p class="hint" id="dev-hint" hidden>Conta de teste local: cliente@live.dev · senha live123</p>
+      </form>
+    </div>
+  </main>
+  <script type="module" src="/js/layout.js"></script>
+  <script type="module" src="/js/auth.js"></script>
+</body>
+</html>
