@@ -50,8 +50,8 @@ function header() {
               <div class="wrap mega-grid">
                 <div><span class="label muted">Por peça</span><ul>${COLLECTION.map(([label, slug]) => `<li>${link(label, `/produtos?categoria=${slug}`)}</li>`).join('')}</ul></div>
                 <div><span class="label muted">Seleções</span><ul><li>${link('Novidades', '/produtos?ordem=recentes')}</li><li>${link('Peças-assinatura', '/produtos?destaque=true')}</li><li>${link('Ver tudo', '/produtos')}</li></ul></div>
-                <a class="mega-feature" href="/produtos?categoria=conjuntos"><img class="photo" src="/img/studio-reformer.jpg" alt="" loading="lazy"><span class="display">Conjuntos para o reformer</span></a>
-                <a class="mega-feature" href="/produtos?categoria=bodies"><img class="photo" src="/img/body-noir.jpg" alt="" loading="lazy"><span class="display">Bodies, do barre à noite</span></a>
+                <a class="mega-feature" href="/produtos?categoria=conjuntos"><img class="photo" src="/img/51.webp" alt="" loading="lazy"><span class="display">Conjuntos para o reformer</span></a>
+                <a class="mega-feature" href="/produtos?categoria=bodies"><img class="photo" src="/img/52.webp" alt="" loading="lazy"><span class="display">Bodies, do barre à noite</span></a>
               </div>
             </div>
           </div>
