@@ -1,0 +1,27 @@
+[build]
+  publish = "public"
+  command = "npx prisma generate && npx prisma db push --skip-generate"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["@prisma/client", ".prisma", "swagger-ui-express"]
+  included_files = ["node_modules/.prisma/client/**", "node_modules/swagger-ui-dist/**"]
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/docs"
+  to = "/.netlify/functions/api"
+  status = 200
+  force = true
