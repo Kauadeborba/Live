@@ -1,6 +1,6 @@
 import express from 'express'
 import swaggerUi from 'swagger-ui-express'
-import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 import { openapi } from './openapi.js'
 import { authRoutes } from './modules/auth.routes.js'
 import { catalogRoutes } from './modules/catalog.routes.js'
@@ -8,7 +8,7 @@ import { cartRoutes } from './modules/cart.routes.js'
 import { orderRoutes } from './modules/orders.routes.js'
 import { errorHandler, notFoundHandler } from './middlewares/errorHandler.js'
 
-const publicDir = fileURLToPath(new URL('../public', import.meta.url))
+const publicDir = path.join(process.cwd(), 'public')
 
 export function createApp() {
   const app = express()
