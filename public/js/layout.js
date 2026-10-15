@@ -20,6 +20,7 @@ const isHome = location.pathname === '/'
 function notices() {
   return [
     `Retire suas compras na loja${STORE.pickupWindow ? ` ${escape(STORE.pickupWindow)}` : ''}`,
+    ...(STORE.promos || []).map(escape),
     STORE.freeShippingCents && `Frete cortesia acima de ${money(STORE.freeShippingCents)}`,
     STORE.exchangeDays && `Trocas em até ${STORE.exchangeDays} dias`,
   ].filter(Boolean)
@@ -39,7 +40,7 @@ function header() {
   const here = location.pathname + location.search
   const link = (label, href) => `<a href="${href}" ${here === href ? 'aria-current="page"' : ''}>${label}</a>`
   return `
-    <div class="notice">${notices().map((n, i) => `<span class="${i ? 'notice-extra' : ''}">${n}</span>`).join('<span class="notice-extra" aria-hidden="true"> · </span>')}</div>
+    <div class="notice" role="region" aria-roledescription="carrossel" aria-label="Avisos da loja">${notices().map((n, i) => `<span class="notice-item${i ? '' : ' on'}" ${i ? 'aria-hidden="true"' : ''}>${n}</span>`).join('')}</div>
     <header class="header ${isHome ? 'over-hero' : ''}">
       <div class="wrap">
         <button class="menu-toggle icon-btn" aria-label="Abrir menu" aria-expanded="false">${icon('menu')}</button>
@@ -85,6 +86,23 @@ function storeBlock() {
     </div>`
 }
 
+function socials() {
+  return [
+    ['instagram', 'Instagram', STORE.social?.instagram],
+    ['facebook', 'Facebook', STORE.social?.facebook],
+    ['youtube', 'YouTube', STORE.social?.youtube],
+    ['chat', 'WhatsApp', whatsappLink()],
+  ]
+}
+
+function motto() {
+  return `
+      <div class="motto">
+        <p class="display">Todo movimento é <em>Live</em></p>
+        <div class="follow"><span>Siga nossas redes sociais:</span>${socials().map(([name, label, href]) => (href ? `<a href="${escape(href)}" target="_blank" rel="noopener" aria-label="${label}">${icon(name)}</a>` : `<i role="img" aria-label="${label}">${icon(name)}</i>`)).join('')}</div>
+      </div>`
+}
+
 function footer() {
   return `
     <section class="signup">
@@ -97,7 +115,7 @@ function footer() {
       </div>
     </section>
     <footer class="footer">
-      <div class="services wrap">${services().map(([name, title, text]) => `<div>${icon(name)}<strong>${title}</strong><span class="muted">${text}</span></div>`).join('')}</div>
+      <div class="services wrap">${services().map(([name, title, text]) => `<div>${icon(name)}<strong>${title}</strong><span class="muted">${text}</span></div>`).join('')}</div>${motto()}
       <div class="wrap cols">
         <div><h4 class="label">Coleção</h4><ul>${COLLECTION.map(([label, slug]) => `<li><a href="/produtos?categoria=${slug}">${label}</a></li>`).join('')}</ul></div>
         <div><h4 class="label">Atendimento</h4><ul><li><a href="/pedidos">Meus pedidos</a></li><li><button class="text-link" data-size-guide>Guia de medidas</button></li></ul></div>
@@ -164,6 +182,28 @@ const bar = document.querySelector('.notice')
 const syncBar = () => document.documentElement.style.setProperty('--bar-h', `${bar.offsetHeight}px`)
 syncBar()
 addEventListener('resize', syncBar)
+
+const items = bar.querySelectorAll('.notice-item')
+if (items.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let current = 0
+  let paused = false
+  bar.addEventListener('mouseenter', () => { paused = true })
+  bar.addEventListener('mouseleave', () => { paused = false })
+  setInterval(() => {
+    if (paused || document.hidden) return
+    const leaving = items[current]
+    leaving.classList.replace('on', 'out')
+    leaving.setAttribute('aria-hidden', 'true')
+    current = (current + 1) % items.length
+    const next = items[current]
+    next.style.transition = 'none'
+    next.classList.remove('out')
+    next.offsetHeight
+    next.style.transition = ''
+    next.classList.add('on')
+    next.removeAttribute('aria-hidden')
+  }, 4000)
+}
 if (isHome) {
   const onScroll = () => headerEl.classList.toggle('solid', scrollY > 40)
   onScroll()
