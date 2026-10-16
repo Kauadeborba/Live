@@ -15,37 +15,37 @@ colors:
   danger: "#9b3b2e"
 typography:
   display:
-    fontFamily: "'Bodoni Moda', 'Didot', serif"
+    fontFamily: "'Montserrat', system-ui, sans-serif"
     fontSize: "clamp(48px, 5.6vw, 88px)"
     fontWeight: 400
     lineHeight: 1.02
     letterSpacing: "-0.02em"
     fontVariation: "opsz auto"
   headline:
-    fontFamily: "'Bodoni Moda', 'Didot', serif"
+    fontFamily: "'Montserrat', system-ui, sans-serif"
     fontSize: "clamp(38px, 5vw, 72px)"
     fontWeight: 400
     lineHeight: 1.02
     letterSpacing: "-0.02em"
   title:
-    fontFamily: "'Bodoni Moda', 'Didot', serif"
+    fontFamily: "'Montserrat', system-ui, sans-serif"
     fontSize: "28px"
     fontWeight: 400
     lineHeight: 1.15
   body:
-    fontFamily: "'Hanken Grotesk', system-ui, sans-serif"
+    fontFamily: "'Inter', system-ui, sans-serif"
     fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.6
     fontFeature: "'tnum' 1"
   label:
-    fontFamily: "'Hanken Grotesk', system-ui, sans-serif"
+    fontFamily: "'Inter', system-ui, sans-serif"
     fontSize: "11px"
     fontWeight: 600
     letterSpacing: "0.16em"
     fontFeature: "'tnum' 1"
   button:
-    fontFamily: "'Hanken Grotesk', system-ui, sans-serif"
+    fontFamily: "'Inter', system-ui, sans-serif"
     fontSize: "12px"
     fontWeight: 600
     letterSpacing: "0.16em"
@@ -150,7 +150,7 @@ components:
 
 Cada peça da Live é apresentada como se estivesse num provador de ateliê: uma tag de sarja com cantos cortados, ilhós e pesponto tracejado, pendurada por um fio caramelo. Composição, toque e uso são escritos em linhas de etiqueta; o tamanho é escolhido numa etiqueta tecida; levar à sacola carimba a tag. O mundo é feito de papel, sarja, tinta e linha, e nada além disso.
 
-A densidade é baixa e editorial. Fotos grandes sangram até a borda ou ocupam colunas inteiras; a interface fica em tinta café sobre branco-gelo, com regras finas de 1px no lugar de caixas. O display é Bodoni Moda leve em escala grande; a UI é Hanken Grotesk pequena, com rótulos em caixa alta espaçada e números tabulares. Profundidade vem de camadas tonais (papel sobre sarja) e de sombras longas e difusas apenas em objetos que flutuam.
+A densidade é baixa e editorial. Fotos grandes sangram até a borda ou ocupam colunas inteiras; a interface fica em tinta café sobre branco-gelo, com regras finas de 1px no lugar de caixas. O display é Montserrat leve em escala grande; a UI é Inter pequena, com rótulos em caixa alta espaçada e números tabulares. Profundidade vem de camadas tonais (papel sobre sarja) e de sombras longas e difusas apenas em objetos que flutuam.
 
 O sistema rejeita a vitrine de e-commerce genérica: grade de cards com sombra, selos, banners promocionais, pegada de corrida ou performance esportiva.
 
@@ -189,15 +189,15 @@ Paleta de ateliê quase monocromática: papel, sarja e tinta em tons quentes, co
 
 ## Typography
 
-**Display Font:** Bodoni Moda (com Didot, serif), eixo óptico automático, pesos 400 e 500 carregados
-**Body Font:** Hanken Grotesk (com system-ui, sans-serif), pesos 400, 500 e 600
+**Display Font:** Montserrat (com system-ui, sans-serif), pesos 400 a 700; também nos menus
+**Body Font:** Inter (com system-ui, sans-serif), pesos 400, 500 e 600
 
 **Character:** Didone de alto contraste em escala de moda contra uma grotesca discreta e técnica; a revista e a etiqueta de composição.
 
 ### Hierarchy
 - **Display** (400, clamp(48px, 5.6vw, 88px), 1.02, -0.02em): título da tag do hero e títulos de página (até clamp(48px, 7vw, 104px)). `text-wrap: balance`.
 - **Headline** (400, clamp(38px, 5vw, 72px), 1.02): títulos de seção, nome da peça no painel de compra (clamp(40px, 4.6vw, 68px)), bloco editorial, cadastro.
-- **Title** (400, 24–34px, 1.15): cabeçalho de drawer (28px), resumo da sacola (34px), pedido (30px), nome do item na sacola (24px), links do mega-menu (22px) e índice de categorias em Bodoni grande.
+- **Title** (400, 24–34px, 1.15): cabeçalho de drawer (28px), resumo da sacola (34px), pedido (30px), nome do item na sacola (24px), links do mega-menu (22px) e índice de categorias em Montserrat grande.
 - **Body** (400, 15px, 1.6): texto corrido; descrições limitadas a 42–46ch. Metadados em 12.5–13px.
 - **Label** (600, 11px, 0.16em, caixa alta): rótulos de linhas de etiqueta, cabeçalhos de rodapé, legendas de campo, status de pedido. Botões e links de ação usam a mesma voz em 12px.
 
@@ -206,7 +206,7 @@ Os "versaletes espaçados" do contrato estão implementados como caixa alta pequ
 ### Named Rules
 **The Números Tabulares Rule.** O corpo inteiro roda com `font-variant-numeric: tabular-nums`; preços, quantidades e totais alinham em coluna.
 
-**The Wordmark Rule.** Enquanto não há logo, o wordmark é "live" em minúsculas em Bodoni Moda 400 (34px no cabeçalho, 28px na tag e no mobile, gigante e cortado no rodapé). Nunca outra fonte.
+**The Wordmark Rule.** Enquanto não há logo, o wordmark é "live" em minúsculas em Montserrat 400 (34px no cabeçalho, 28px na tag e no mobile, gigante e cortado no rodapé). Nunca outra fonte.
 
 ## Layout
 
@@ -221,7 +221,7 @@ Container de 1360px com gutter fluido (clamp(16px, 4vw, 48px)); seções com res
 
 **Responsivo:**
 - **1080px:** vitrine e destaques caem para 3 colunas; a peça 2×2 vira 1 linha.
-- **860px:** cabeçalho de 60px com botão de menu; navegação vira lista em Bodoni 30px; mega-menu some. Hero, editorial, produto, sacola e entrar empilham em 1 coluna; a foto de entrar e o quadro do índice somem. Vitrine em 2 colunas (32px × 12px); quick-add e alternador de densidade somem; galeria do produto vira carrossel de 100% com pontos; painel de compra e resumo deixam de ser sticky; padding das tags reduz para 56px 22px.
+- **860px:** cabeçalho de 60px com botão de menu; navegação vira gaveta à esquerda em Montserrat 22px; mega-menu some. Hero, editorial, produto, sacola e entrar empilham em 1 coluna; a foto de entrar e o quadro do índice somem. Vitrine em 2 colunas (32px × 12px); quick-add e alternador de densidade somem; galeria do produto vira carrossel de 100% com pontos; painel de compra e resumo deixam de ser sticky; padding das tags reduz para 56px 22px.
 
 **The Linha Não Caixa Rule.** Listas, índices, linhas de etiqueta e campos são separados por réguas de 1px (tinta no topo, `line` entre itens); não se envolvem em caixas.
 
@@ -270,16 +270,16 @@ Sobre a foto da peça, ao passar o mouse ou focar (apenas em dispositivos com ho
 - **Style:** sem caixa; só uma régua inferior de 1px em tinta, fundo transparente, 48px de altura; legenda em label tinta suave acima.
 - **Focus:** a régua muda para caramelo.
 - **Error:** mensagem em perigo com régua superior de 1px na mesma cor.
-- **Busca:** campo em Bodoni de clamp(28px, 4vw, 44px) sobre a régua.
+- **Busca:** campo em Montserrat de clamp(28px, 4vw, 44px) sobre a régua.
 
 ### Chips e abas
 Texto 13px sem caixa; inativo em tinta suave, ativo em tinta com sublinhado caramelo de 1px. Sugestões de busca são o único chip com contorno (`line`, tinta no hover).
 
 ### Navigation
-Links de 13px com 0.04em; sublinhado de 1px em tinta que cresce da esquerda (0.5s). O mega-menu abre por `clip-path: inset(0 0 100% 0)` → `inset(0)` em 0.55s, com colunas de links em Bodoni 22px e duas fotos de destaque 4:3. No mobile a navegação vira lista em Bodoni 30px.
+Links de 13px com 0.04em; sublinhado de 1px em tinta que cresce da esquerda (0.5s). O mega-menu abre por `clip-path: inset(0 0 100% 0)` → `inset(0)` em 0.55s, com painel compacto de até 500px no canto esquerdo, com duas colunas de links em Montserrat 20px. No mobile a navegação vira gaveta à esquerda em Montserrat 22px.
 
 ### Drawers
-Painel lateral direito de até 440px (sacola, guia de medidas) ou painel superior de até 86svh (busca), sobre scrim de tinta a 32%. Cabeçalho com título em Bodoni 28px e fechar; corpo rolável; rodapé com total e botão em bloco. Entra com translate em 0.5s no ease exponencial; trava a rolagem, prende o foco e fecha com Esc. A sacola mostra a barra de frete (trilho de 2px em sarja, preenchimento caramelo revelado por `clip-path`) e o item recém-adicionado assenta de -10px em 0.9s.
+Painel lateral direito de até 440px (sacola, guia de medidas) ou painel superior de até 86svh (busca), sobre scrim de tinta a 32%. Cabeçalho com título em Montserrat 28px e fechar; corpo rolável; rodapé com total e botão em bloco. Entra com translate em 0.5s no ease exponencial; trava a rolagem, prende o foco e fecha com Esc. A sacola mostra a barra de frete (trilho de 2px em sarja, preenchimento caramelo revelado por `clip-path`) e o item recém-adicionado assenta de -10px em 0.9s.
 
 ### Entrega (fulfillment)
 Opções em rádio sobre branco-gelo dentro do resumo; a escolhida ganha contorno interno de 1px em caramelo e `accent-color` caramelo.
@@ -297,7 +297,7 @@ Uma só curva: `cubic-bezier(0.16, 1, 0.3, 1)` (ease exponencial). Durações en
 - **Do** usar a tag (cantos cortados, ilhós, pesponto) como a moldura de qualquer bloco de decisão: compra, resumo, pedido.
 - **Do** reservar o caramelo para seleção, foco, entrega escolhida e barra de frete, além do próprio fio e pesponto da tag.
 - **Do** separar listas e campos com réguas de 1px, tinta no topo e `line` entre itens.
-- **Do** escrever títulos em Bodoni Moda 400 com -0.02em e rótulos em Hanken 600 11px com 0.16em em caixa alta.
+- **Do** escrever títulos em Montserrat 600 com -0.02em, menus em Montserrat 500, textos em Inter e rótulos em Inter 600 11px com 0.16em em caixa alta.
 - **Do** renderizar parcelamento, frete cortesia, prazo de retirada e trocas somente quando preenchidos em `public/js/store.js`; com o campo vazio, a linha inteira some.
 - **Do** tratar as fotos de `public/img` como provisórias: trocar o arquivo mantendo o mesmo nome (ver `public/img/LEIA-ME.md`), em 3:4 vertical para peças.
 - **Do** usar o ease exponencial em todo movimento e respeitar `prefers-reduced-motion`.
