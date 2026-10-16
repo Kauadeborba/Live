@@ -217,7 +217,7 @@ const setMenu = (open) => {
   menu.innerHTML = icon(open ? 'close' : 'menu')
 }
 menu.addEventListener('click', () => setMenu(!nav.classList.contains('open')))
-document.addEventListener('click', (e) => { if (nav.classList.contains('open') && !nav.contains(e.target) && !menu.contains(e.target)) setMenu(false) })
+document.addEventListener('click', (e) => { if (nav.classList.contains('open') && !e.composedPath().some((n) => n === nav || n === menu)) setMenu(false) })
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) setMenu(false) })
 
 const mega = document.querySelector('.has-mega')
